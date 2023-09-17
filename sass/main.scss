@@ -1,0 +1,23 @@
+// redefine variables from scss file
+$warning: #c29938;
+$light: #f1f1f19f;
+
+//import the functions and variables
+@import '../node_modules/bootstrap/scss/_functions';
+@import '../node_modules/bootstrap/scss/_variables';
+
+// define the new colors i want to add to the theme colors list. Don't ever change the orignal scss files
+// just do this to add to them.
+
+$custom-colors: (
+    "altlight": #f2ebfa,
+    "yellow":  #4d00dbda
+);
+
+//use this function to merge your custom colors to the theme colors bootstrap gives you
+
+$theme-colors: map-merge($custom-colors, $theme-colors);
+
+// import bootstrap to the file 
+
+@import '../node_modules/bootstrap/scss/bootstrap';
